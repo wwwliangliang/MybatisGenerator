@@ -1,0 +1,1 @@
+call java -jar C:\Icefrog\DeveloperFiles\VS Projects\MybatisGenerator\MybatisGenerator\bin\Debug\Generator\mybatis-generator-core.jar -configfile C:\Icefrog\DeveloperFiles\VS Projects\MybatisGenerator\MybatisGenerator\bin\Debug\Generator\config.xml -overwrite

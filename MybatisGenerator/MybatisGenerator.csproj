@@ -87,6 +87,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Generator\com\PaginationPlugin.class" />
+    <None Include="Generator\gener.bat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,6 +104,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Generate_keys_32px_1186296_easyicon.net.ico" />
+    <Content Include="Generator\com\PaginationPlugin.java" />
+    <Content Include="Generator\config.xml" />
+    <Content Include="Generator\mybatis-generator-core.jar" />
+    <Content Include="Generator\mysql-connector-java-5.1.25.jar" />
+    <Content Include="Generator\ojdbc6.jar" />
+    <Content Include="Generator\PaginationPlugin.java" />
+    <Content Include="Generator\sqljdbc.jar" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

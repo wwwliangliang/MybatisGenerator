@@ -53,35 +53,35 @@ namespace MybatisGenerator
 
             if (ipAddr == null || ipAddr.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接IP！");
+                MessageBox.Show("请输入数据库连接IP！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ip.Focus();
                 txt_ip.SelectAll();
                 return;
             }
             if (port == null || port.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接端口！");
+                MessageBox.Show("请输入数据库连接端口！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_port.Focus();
                 txt_port.SelectAll();
                 return;
             }
             if (username == null || username.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接用户名！");
+                MessageBox.Show("请输入数据库连接用户名！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_username.Focus();
                 txt_username.SelectAll();
                 return;
             }
             if (password == null || password.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接密码！");
+                MessageBox.Show("请输入数据库连接密码！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_password.Focus();
                 txt_password.SelectAll();
                 return;
             }
             if (database == null || database.Equals(""))
             {
-                MessageBox.Show("请输入默认数据库名！");
+                MessageBox.Show("请输入默认数据库名！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_database.Focus();
                 txt_database.SelectAll();
                 return;
@@ -105,7 +105,7 @@ namespace MybatisGenerator
                 {
                     btn_testConnection.ForeColor = Color.Red;
                     IsCheckConnection = false;
-                    MessageBox.Show("连接失败!");
+                    MessageBox.Show("连接失败!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btn_testConnection.Enabled = true;
                     btn_testConnection.Text = "Test Connection";
                 }
@@ -150,63 +150,63 @@ namespace MybatisGenerator
 
             if (ipAddr == null || ipAddr.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接IP！");
+                MessageBox.Show("请输入数据库连接IP！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ip.Focus();
                 txt_ip.SelectAll();
                 return;
             }
             if (port == null || port.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接端口！");
+                MessageBox.Show("请输入数据库连接端口！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_port.Focus();
                 txt_port.SelectAll();
                 return;
             }
             if (username == null || username.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接用户名！");
+                MessageBox.Show("请输入数据库连接用户名！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_username.Focus();
                 txt_username.SelectAll();
                 return;
             }
             if (password == null || password.Equals(""))
             {
-                MessageBox.Show("请输入数据库连接密码！");
+                MessageBox.Show("请输入数据库连接密码！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_password.Focus();
                 txt_password.SelectAll();
                 return;
             }
             if (database == null || database.Equals(""))
             {
-                MessageBox.Show("请输入默认数据库名！");
+                MessageBox.Show("请输入默认数据库名！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_database.Focus();
                 txt_database.SelectAll();
                 return;
             }
             if (model == null || model.Equals(""))
             {
-                MessageBox.Show("请输入Model包路径！");
+                MessageBox.Show("请输入Model包路径！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_modelPath.Focus();
                 txt_modelPath.SelectAll();
                 return;
             }
             if (mapper == null || mapper.Equals(""))
             {
-                MessageBox.Show("请输入Mapper包路径！");
+                MessageBox.Show("请输入Mapper包路径！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_mapperPath.Focus();
                 txt_mapperPath.SelectAll();
                 return;
             }
             if (interfc == null || interfc.Equals(""))
             {
-                MessageBox.Show("请输入Dao接口包路径！");
+                MessageBox.Show("请输入Dao接口包路径！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_interfacePath.Focus();
                 txt_interfacePath.SelectAll();
                 return;
             }
             if (savepath == null || savepath.Equals(""))
             {
-                MessageBox.Show("请输入需要保存的根目录！");
+                MessageBox.Show("请输入需要保存的根目录！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_savePath.Focus();
                 txt_savePath.SelectAll();
                 return;
@@ -342,8 +342,11 @@ namespace MybatisGenerator
             //run the software
             string execPath = Application.StartupPath + "\\Generator\\gener.bat";
             System.Diagnostics.Process process = System.Diagnostics.Process.Start(execPath);
-            MessageBox.Show("Success");
-
+            DialogResult result = MessageBox.Show("Deserialize 成功,是否立即打开目录？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(result == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(savepath);
+            }
 
         }
 
